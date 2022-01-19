@@ -1,0 +1,21 @@
+.* - Zero or more occurrences of wildcard, which means zero or more occurrences of any character
+a* - it means zero or more occurrences of the letter a
+[abc] - Character class. One of the characters inside the square brackets - a, b or c
+[^abc] - Any character EXCEPT any of the ones inside the square brackets, in a single position
+[a-c] - One of characters falling in the range given in square brackets - a,b,c
+[a-cx] - One of the characters falling in the range OR any of the other choices given in square brackets - a,b,c OR x
+[a-cA-Cx] - One of the characters falling in one of the ranges OR any of other choices given in square brackets - a,b,c,A,B,C,x
+Following characters should be escaped with a backlash as these characters have special meaning otherwise: ^$*[()\
+If a '.' is inside square brackets, it need NOT be escaped
+If any of the characters '^' and '-' appear inside square brackets, it neefs to be escaped with a backslash as these two characters have inside square brackets
+The backslash itself should always be escaped with a backslash, irrespective of its position withen the regex: \\
+^ is a placeholder that signfies beginning of a line. The interpretation of ^ differs within square brackets and outside of it. Inside square brackets, ^ stands for negation. Outside, it is a place holder for beginning of line
+$ is a placeholder that signifies end of a line
+a{m} represents m repetitions of whatever immediately precedes this, ie . a
+Note: with grep engine the Eoption is required, if you are using any symbol from POSIX extended set in the regex
+a{m,n} represents at least m and at most n repetitions of whatever immediately precedes this, i.e. a
+Parenthesis "()" is used to group and treat as a single entity - {m,} represents at least m repetitions of whatever immediately precedes this
+a+ means One or more occurrences of a(The character just preceding the plus symbol)
+a? means Zero or one occurrences of a(The character just preceding the question mark)
+(a|b) represents either a or b, where a and b can be multi-character strings
+sed command syntax using for search and replace a pattern: sed -r s/pattern/replacement/g inputfile
