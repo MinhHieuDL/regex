@@ -1,0 +1,7 @@
+bob.123@gmail.com
+alice-personal@yahoo.in
+admin@cloud.guru
+tome_business@amazon.com
+george@yahoo
+robert_at_gmail.com
+steve austin@gmail.com
